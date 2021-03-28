@@ -1,5 +1,6 @@
 # AOVPN.
 Always On VPN
+koko
 
 999ik
 .\Update-VPN-Profile-Office365-Exclusion-Routes.ps1 -VPNprofilefile "C:\temp\UserProfile.xml"
