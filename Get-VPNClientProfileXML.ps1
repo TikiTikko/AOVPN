@@ -1,6 +1,6 @@
 ﻿<#
 
-.SYNOPSIS
+.SYNOPSISs
     PowerShell script to exctact ProfileXML from an existing VPN connection.
 
 .PARAMETER ConnectionName
@@ -94,19 +94,19 @@ If (Test-Path $xmlFilePath) {
 
     Write-Warning "$xmlFilePath already exists. Exiting script."
     Exit
-    
-}
-Function Format-XML ([xml]$Xml, $Indent = 3) { 
 
-    $StringWriter = New-Object System.IO.StringWriter 
-    $XmlWriter = New-Object System.XMl.XmlTextWriter $StringWriter 
+}
+Function Format-XML ([xml]$Xml, $Indent = 3) {
+
+    $StringWriter = New-Object System.IO.StringWriter
+    $XmlWriter = New-Object System.XMl.XmlTextWriter $StringWriter
     $XmlWriter.Formatting = "Indented"
-    $XmlWriter.Indentation = $Indent 
-    $Xml.WriteContentTo($XmlWriter) 
-    $XmlWriter.Flush() 
-    $StringWriter.Flush() 
-    Write-Output $StringWriter.ToString() 
-    
+    $XmlWriter.Indentation = $Indent
+    $Xml.WriteContentTo($XmlWriter)
+    $XmlWriter.Flush()
+    $StringWriter.Flush()
+    Write-Output $StringWriter.ToString()
+
 }
 
 # // Remove spaces from VPN connection name
