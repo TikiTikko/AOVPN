@@ -9,6 +9,7 @@ Always On VPN
 # Set Metric
 $SetAOVPN = "Ethernet"
 $SetMetric = "15"
+# zuzr
 
 $GetMetric = Get-NetIPInterface -InterfaceAlias $SetAOVPN -AddressFamily IPv4
 $index = $GetMetric.ifIndex
